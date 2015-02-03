@@ -258,13 +258,13 @@ jasmineRequire.HtmlReporter = function(j$) {
       }
 
       //Report to AndeLabs
-      if(specsExecuted - failureCount === specsExecuted) {
+      if(specsExecuted - failureCount === totalSpecsDefined) {
         console.log('Lab completed');
         Reporter.reportComplete();
       }
       //AndeLabs report done
-      
-    //end jasmineDone  
+
+    //end jasmineDone
     };
 
     return this;
@@ -276,7 +276,7 @@ jasmineRequire.HtmlReporter = function(j$) {
     function clearPrior() {
       // return the reporter
       var oldReporter = find('');
-      
+
       if(oldReporter) {
         getContainer().removeChild(oldReporter);
       }
